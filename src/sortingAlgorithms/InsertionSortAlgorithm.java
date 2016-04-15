@@ -10,7 +10,18 @@ public class InsertionSortAlgorithm {
 
 	public int[] insertionSort() {
 
-		return null;
+		for (int i = 1; i < arrayToSort.length; i++){
+			int currentElementSorted = arrayToSort[i];
+			int prevLocation = i - 1; 
+			
+			while(prevLocation >= 0 && arrayToSort[prevLocation] > currentElementSorted){
+				arrayToSort[prevLocation+1] = arrayToSort[prevLocation];
+				prevLocation--;
+			}
+			arrayToSort[prevLocation+1] = currentElementSorted;
+		}
+		
+		return arrayToSort;
 	}
 
 	public static void main(String[] args) {
