@@ -28,9 +28,9 @@ public class InsertionSortAlgorithm {
 
 		int[] unsortedArray = { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 
-		BubbleSortAlgorithm useBubbleSort = 
-				new BubbleSortAlgorithm(unsortedArray.clone());
-		int[] sortedArray = useBubbleSort.bubbleSort();
+		InsertionSortAlgorithm useBubbleSort = 
+				new InsertionSortAlgorithm(unsortedArray.clone());
+		int[] sortedArray = useBubbleSort.insertionSort();
 		System.out.println("Unsorted Array");
 		for (int unsortedValue : unsortedArray) {
 			System.out.print(unsortedValue + ", ");

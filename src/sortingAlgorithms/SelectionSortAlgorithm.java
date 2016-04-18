@@ -27,7 +27,7 @@ public class SelectionSortAlgorithm {
 			
 			
 		}
-		return null;
+		return arrayToSort;
 	}
 
 	public static void main(String[] args) {
@@ -35,9 +35,9 @@ public class SelectionSortAlgorithm {
 		//int[] unsortedArray = { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 		int[] unsortedArray = {23,42,4,16,8,15};
 		
-		BubbleSortAlgorithm useBubbleSort = 
-				new BubbleSortAlgorithm(unsortedArray.clone());
-		int[] sortedArray = useBubbleSort.bubbleSort();
+		SelectionSortAlgorithm useBubbleSort = 
+				new SelectionSortAlgorithm(unsortedArray.clone());
+		int[] sortedArray = useBubbleSort.selectionSort();
 		System.out.println("Unsorted Array");
 		for (int unsortedValue : unsortedArray) {
 			System.out.print(unsortedValue + ", ");
