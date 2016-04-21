@@ -40,6 +40,14 @@ public class BinaryTree {
 		}
 	}
 	
+	public void preOrderTraverseTree(Node focusNode){
+		if (focusNode != null){
+			System.out.println(focusNode.toSting());
+			preOrderTraverseTree(focusNode.leftChild);
+			preOrderTraverseTree(focusNode.rightChild);
+		}
+	}
+	
 	public static void main (String [] args){
 		BinaryTree tree = new BinaryTree();
 		tree.addNode(50, "A");
@@ -49,7 +57,7 @@ public class BinaryTree {
 		tree.addNode(75, "E");
 		tree.addNode(85, "F");
 		
-		tree.inOrderTraverseTree(tree.root);
+		tree.preOrderTraverseTree(tree.root);
 		
 	}
 }
