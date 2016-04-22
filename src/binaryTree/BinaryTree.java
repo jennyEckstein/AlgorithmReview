@@ -32,6 +32,93 @@ public class BinaryTree {
 		}
 	}
 	
+	public boolean remove(int key){
+		Node focusNode = root;
+		Node parent = root;
+		
+		boolean isItLeftChild = true;
+		
+		while(focusNode.key != key){
+			parent = focusNode;
+			
+			if(key < focusNode.key){
+				isItLeftChild = true;
+				focusNode = focusNode.leftChild;
+			}else{
+				isItLeftChild = false;
+				focusNode = focusNode.rightChild;
+			}
+			
+			if(focusNode == null){
+				return false;
+			}	
+		}
+		if(focusNode.leftChild == null && focusNode.rightChild == null){
+			if(focusNode == root){
+				root = null;
+			}		
+		else if(isItLeftChild){
+			parent.leftChild = null;
+		}else{
+			parent.rightChild = null;
+		}
+		}else if(focusNode.rightChild == null){
+			if(focusNode == root){
+				root = focusNode.leftChild;
+			}else if(isItLeftChild){
+				parent.leftChild = focusNode.leftChild;
+			}else{
+				parent.rightChild = focusNode.leftChild;
+			}
+		}
+		
+		//no left child
+		
+		else if(focusNode.leftChild == null){
+			if(focusNode == root){
+				root = focusNode.rightChild;
+			}else if(isItLeftChild){
+				parent.leftChild = focusNode.rightChild;
+			}else{
+				parent.rightChild = focusNode.leftChild;
+			}
+		}else{//2 children involved
+			Node replacement = getReplacementNode(focusNode);
+			if(focusNode == root){
+				root = replacement;
+			}else if(isItLeftChild){
+				parent.leftChild = replacement;
+			}else{
+				parent.rightChild = replacement;
+			}
+			
+			replacement.leftChild = focusNode.leftChild;
+		}
+		
+		return true;
+		
+	}
+	
+	private Node getReplacementNode(Node replacedNode){
+		Node replacementParent = replacedNode;
+		Node replacement = replacedNode;
+		
+		Node focusNode = replacedNode.rightChild;
+		while(focusNode != null){
+			replacementParent = replacement;
+			replacement = focusNode;
+			
+			focusNode = focusNode.leftChild;
+		}
+		
+		if(replacement != replacedNode.rightChild){
+			replacementParent.leftChild = replacement.rightChild;
+			replacement.rightChild = replacement.rightChild;
+		}
+		
+		return replacement;
+	}
+	
 	public Node findNode(int key){
 		Node focusNode = root;
 		while(focusNode.key != key){
@@ -84,8 +171,11 @@ public class BinaryTree {
 		tree.addNode(85, "F");
 		
 		//tree.postOrderTraverseTree(tree.root);
+		tree.inOrderTraverseTree(tree.root);
+		System.out.println("------------------");
+		tree.remove(25);
 		
-		tree.findNode(30);
+		tree.inOrderTraverseTree(tree.root);
 		
 	}
 }
