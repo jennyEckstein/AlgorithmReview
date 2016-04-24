@@ -62,6 +62,24 @@ public class EquilibrumIndex {
 			    return -1; 	
 	 }
 	 
+	 int solutionBest(int arr[], int n) {
+		    if (n==0) return -1; 
+		    long sum = 0;
+		    int i; 
+		    for(i=0;i<n;i++){
+		    	sum+=(long) arr[i]; 
+		    }
+
+		    long sum_left = 0;    
+		    for(i=0;i<n;i++) {
+		        long sum_right = sum - sum_left - (long) arr[i];
+		        if (sum_left == sum_right){
+		        	return i;
+		        }
+		        sum_left += (long) arr[i];
+		    } 
+		    return -1; 
+		} 
 	 
 	 public static void main (String [] args){
 		 int [] array = {-1,3,-4,5,1,-6,2,1};
@@ -70,6 +88,7 @@ public class EquilibrumIndex {
 		 
 		 System.out.println(qIndex.solution(array));
 		 System.out.println(qIndex.solutionOption2(array, array.length));
+		 System.out.println(qIndex.solutionBest(array, array.length));
 	 }
 
 
