@@ -16,6 +16,20 @@ Worse-case scenario: The array is in a reverse order; we have to "bubble" each o
 
 Best-case scenario: The array is already perfectly sorted, and we make no swaps on the firt pass. O(n)
 
-2. Selection Sort
+2. <b>Selection Sort</b>
+The basic idea behind the selection sort is to devide the list into 2 portions: 1. Sorted portion and 2. Unsorted portion. At each step of the algorithm a number is moved from unsorted portion to serted portion until eventually the entire list is sorted
+Build sorted potion of out list starting on the left.
+Find the smallest element and put it at the end of the sorted portion. We have to scan through the list to find the element first. Once we found the smallest element in the list we want to move it to the sorted portion of our list. So we will simply swap the smallest element with the element in the very first slot.From now on we do not need to touch our very first element. Then repeat the process by finding the smallest element and swapping it with the element in the slot 2.
+
+for i = 1 to n - 1<br>
+	min = i<br>
+	for j = i+1 to n<br>
+		if array[i] < array[min]<br>
+			min = j<br><br>
+	if min != i<br>
+		swap array[min] and array[i]<br>
+
+This sort is also O(n^2)
+This algorithms would require the same number of steps even for the sorted list, so the best case scenario is also n^2
 3. Insertion Sort
 4. Merge Sort
