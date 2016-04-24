@@ -44,12 +44,32 @@ public class EquilibrumIndex {
 	    return -1;
 	    }
 	 
+	 public int solutionOption2(int A[], int n){		 
+			    int k, m, lsum, rsum; 
+			    for(k = 0; k < n; ++k) { 
+			        lsum = 0; rsum = 0;
+			        for(m = 0; m < k; ++m) {
+			        	lsum += A[m];
+			        } 
+			        for(m = k + 1; m < n; ++m){
+			        	rsum += A[m];  
+			        }
+			        
+			        if (lsum == rsum){
+			        	return k;
+			        }
+			    } 
+			    return -1; 	
+	 }
+	 
+	 
 	 public static void main (String [] args){
 		 int [] array = {-1,3,-4,5,1,-6,2,1};
 		 
 		 EquilibrumIndex qIndex = new EquilibrumIndex();
 		 
 		 System.out.println(qIndex.solution(array));
+		 System.out.println(qIndex.solutionOption2(array, array.length));
 	 }
 
 
