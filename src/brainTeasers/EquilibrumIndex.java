@@ -80,16 +80,5 @@ public class EquilibrumIndex {
 		    } 
 		    return -1; 
 		} 
-	 
-	 public static void main (String [] args){
-		 int [] array = {-1,3,-4,5,1,-6,2,1};
-		 
-		 EquilibrumIndex qIndex = new EquilibrumIndex();
-		 
-		 System.out.println(qIndex.solution(array));
-		 System.out.println(qIndex.solutionOption2(array, array.length));
-		 System.out.println(qIndex.solutionBest(array, array.length));
-	 }
-
 
 }
