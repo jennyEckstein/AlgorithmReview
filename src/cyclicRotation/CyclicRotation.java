@@ -31,24 +31,4 @@ public class CyclicRotation {
 		
 		return shiftedArray;
 	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		int [] array = {3,8,9,7,6};
-		
-		for (int i = 0; i < array.length; i++){
-			System.out.print(array[i] + ", ");
-		}
-		
-		System.out.println("\n----------");
-		CyclicRotation cyclicRotation = new CyclicRotation();
-		int [] returnedArray = cyclicRotation.solution(array, 2);
-		
-		for (int i = 0; i < returnedArray.length; i++){
-			System.out.print(returnedArray[i] + ", ");
-		}
-
-	}
-
 }
