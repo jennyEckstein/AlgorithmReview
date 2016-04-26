@@ -10,6 +10,7 @@ public class CyclicRotationTest {
 	
 	private CyclicRotation cyclicRotation;
 	private int [] array = {3,8,9,7,6};
+	private int [] array1 = {3};
 
 	@Before
 	public void setUp() throws Exception {
@@ -29,6 +30,14 @@ public class CyclicRotationTest {
 		
 		assertTrue(returnedArray[2]== array[1]);
 		assertTrue(returnedArray[0]== array[4]);
+		
+		returnedArray = cyclicRotation.solution(array1, 5);
+		assertTrue(returnedArray[0] == array[0]);
+		
+		returnedArray = cyclicRotation.solution(array, 13);
+				
+		assertTrue(returnedArray[3]== array[0]);
+		
 		
 	}
 
