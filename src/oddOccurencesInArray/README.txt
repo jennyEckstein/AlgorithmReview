@@ -1,4 +1,7 @@
-A non-empty zero-indexed array A consisting of N integers is given. The array contains an odd number of elements, and each element of the array can be paired with another element that has the same value, except for one element that is left unpaired.
+A non-empty zero-indexed array A consisting of N integers is given. 
+The array contains an odd number of elements, and each element of the array 
+can be paired with another element that has the same value, 
+except for one element that is left unpaired.
 
 For example, in array A such that:
 
@@ -13,7 +16,8 @@ Write a function:
 
 int solution(int A[], int N);
 
-that, given an array A consisting of N integers fulfilling the above conditions, returns the value of the unpaired element.
+that, given an array A consisting of N integers fulfilling the above conditions, 
+returns the value of the unpaired element.
 
 For example, given array A such that:
 
@@ -30,5 +34,6 @@ all but one of the values in A occur an even number of times.
 Complexity:
 
 expected worst-case time complexity is O(N);
-expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).
+expected worst-case space complexity is O(1), 
+beyond input storage (not counting the storage required for input arguments).
 Elements of input arrays can be modified.
