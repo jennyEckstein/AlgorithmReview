@@ -26,6 +26,7 @@ public class Count_Squares {
 		//you cannot have negative squares, nor the one that is zero
 		if (lower < 1){
 			lower = 1;
+			total_squares++;
 		}else{
 			//find next square in range 
 			//int current_sq = 0;
@@ -38,17 +39,16 @@ public class Count_Squares {
 			
 			if (current_sq == 0){
 				return total_squares;
-			}else{
-				int current_add = find_current_add(current_sq);
-				
-				for (int j = current_sq + current_add; j < upper;){
-					total_squares++;
-					current_add+=2;
-					j+= current_add;
-				}
 			}
 		}
 		
+		int current_add = find_current_add(current_sq);
+		
+		for (int j = current_sq + current_add; j < upper;){
+			total_squares++;
+			current_add+=2;
+			j+= current_add;
+		}
 		
 		
 		return total_squares;
