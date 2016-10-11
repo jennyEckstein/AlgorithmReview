@@ -39,5 +39,21 @@ public class Test_Count_Squares {
 	public void testCase_negative() {
 		Assert.assertEquals(4, count.solution(-100, 17));
 	}
+	
+	@Test
+	public void testCase_one_square() {
+		Assert.assertEquals(1, count.solution(-100, 1));
+	}
+	
+	@Test
+	public void testCase_no_square() {
+		Assert.assertEquals(0, count.solution(-100, -17));
+	}
+	
+	@Test
+	public void testCase_huge_value() {
+		
+		Assert.assertEquals(11111, count.solution(-2147483647, 2147483647));
+	}
 
 }

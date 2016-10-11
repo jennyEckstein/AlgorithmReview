@@ -21,6 +21,7 @@ public class Count_Squares {
 			return total_squares;
 		}
 		
+				
 		int add = 3;
 		int current_sq = 1;
 		//you cannot have negative squares, nor the one that is zero
