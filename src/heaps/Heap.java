@@ -34,6 +34,30 @@ public class Heap<T extends Comparable <T>> {
 		}
 	}
 	
+	private void siftDown(){
+		int element = 0;
+		int left = 2 * element + 1;
+		while(left < heap.size()){
+			int max = left;
+			int right = left + 1;
+			if (right < heap.size()){
+				T left_obj = heap.get(left);
+				T right_obj = heap.get(right);
+				
+				if (left_obj.compareTo(right_obj) > 0){
+					T temp = heap.get(element);
+					heap.set(element, heap.get(max));
+					heap.set(max, temp);
+					element = max;
+					left = 2 * element + 1;
+				}
+			}else{
+				break;
+			}
+			
+		}
+	}
+	
 	
 
 }
