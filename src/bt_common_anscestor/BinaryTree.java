@@ -13,7 +13,9 @@ public class BinaryTree {
 		
 		return null;
 	}
-	
+	/**
+	 * In Order used to primarily print BTS in asc order	 
+	 */
 	public StringBuilder inOrder(Node root, StringBuilder str){
 		if(root.left != null){
 			inOrder(root.left, str);
@@ -22,6 +24,20 @@ public class BinaryTree {
 		if(root.right != null){
 			inOrder(root.right, str);
 		}
+		return str;
+	}
+	/**
+	 * Useful for listing dependencies before the task
+	 */
+	public StringBuilder preOrder(Node root, StringBuilder str){
+		
+		if(root.left != null){
+			preOrder(root.left, str);
+		}
+		if(root.right != null){
+			preOrder(root.right, str);
+		}		
+		str.append(root.data);
 		return str;
 	}
 	

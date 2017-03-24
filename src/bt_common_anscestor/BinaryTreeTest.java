@@ -1,12 +1,10 @@
 package bt_common_anscestor;
 
-import static org.junit.Assert.*;
-
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import bt_common_anscestor.Node;
-import junit.framework.Assert;
 
 public class BinaryTreeTest {
 	private BinaryTree bt;
@@ -44,8 +42,13 @@ public class BinaryTreeTest {
 	public void testInOrder() {
 		Assert.assertEquals(
 				this.bt.inOrder(this.bt.head, new StringBuilder()).toString(), 
-				"3571015172030");
-		
+				"3571015172030");		
+	}
+	@Test
+	public void testPreOrder(){
+		Assert.assertEquals(
+				this.bt.preOrder(this.bt.head, new StringBuilder()).toString(), 
+				"3751715103020");
 	}
 
 }
