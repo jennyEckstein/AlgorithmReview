@@ -29,13 +29,13 @@ public class BinaryTree {
 	/**
 	 * Useful for listing dependencies before the task
 	 */
-	public StringBuilder preOrder(Node root, StringBuilder str){
+	public StringBuilder postOrder(Node root, StringBuilder str){
 		
 		if(root.left != null){
-			preOrder(root.left, str);
+			postOrder(root.left, str);
 		}
 		if(root.right != null){
-			preOrder(root.right, str);
+			postOrder(root.right, str);
 		}		
 		str.append(root.data);
 		return str;

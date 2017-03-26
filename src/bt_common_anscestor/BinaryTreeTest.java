@@ -47,7 +47,7 @@ public class BinaryTreeTest {
 	@Test
 	public void testPreOrder(){
 		Assert.assertEquals(
-				this.bt.preOrder(this.bt.head, new StringBuilder()).toString(), 
+				this.bt.postOrder(this.bt.head, new StringBuilder()).toString(), 
 				"3751715103020");
 	}
 
