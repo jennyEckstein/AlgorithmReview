@@ -8,6 +8,11 @@ import bt_common_anscestor.Node;
 
 public class BinaryTreeTest {
 	private BinaryTree bt;
+	private Node level4left;
+	private Node level3left;
+	private Node level2right;
+	private Node newNode;
+	
 	@Before
 	public void setUp() throws Exception {
 //						/20\
@@ -15,19 +20,19 @@ public class BinaryTreeTest {
 //				/5\		15\
 //			3		7		17
 		this.bt = new BinaryTree();
-		Node newNode = new Node(20, null);
+		newNode = new Node(20, null);
 		Node level2left = new Node(10, newNode);
-		Node level2right = new Node(30, newNode);
+		level2right = new Node(30, newNode);
 		newNode.left = level2left;
 		newNode.right = level2right;
 		
-		Node level3left = new Node(5, level2left);
+		level3left = new Node(5, level2left);
 		Node level3right = new Node(15, level2left);
 		
 		level2left.left = level3left;
 		level2left.right = level3right;
 		
-		Node level4left = new Node(3, level3left);
+		level4left = new Node(3, level3left);
 		Node level4right = new Node(7, level3left);
 		
 		level3left.left = level4left;
@@ -55,6 +60,15 @@ public class BinaryTreeTest {
 		Assert.assertEquals(
 				this.bt.postOrder(this.bt.head, new StringBuilder()).toString(), 
 				"3-7-5-17-15-10-30-20-");
+	}
+	@Test
+	public void calculateDepth(){
+		Assert.assertEquals(this.bt.depth(this.level4left), 4);
+		Assert.assertEquals(this.bt.depth(this.level3left), 3);
+		Assert.assertEquals(this.bt.depth(this.level2right), 2);
+		Assert.assertEquals(this.bt.depth(this.newNode), 1);
+		Assert.assertEquals(this.bt.depth(null), 0);
+		
 	}
 
 }

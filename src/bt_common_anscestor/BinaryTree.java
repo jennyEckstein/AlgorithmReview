@@ -13,6 +13,15 @@ public class BinaryTree {
 		
 		return null;
 	}
+	
+	public int depth(Node node){
+		int depth = 0;
+		while(node != null){
+			node = node.parent;
+			depth++;
+		}
+		return depth;
+	}	
 	/**
 	 * In Order used to primarily print BTS in asc order
 	 * Used to flatten the BTS into an array for example	 
@@ -56,15 +65,6 @@ public class BinaryTree {
 		str.append(root.data);
 		str.append("-");
 		return str;
-	}
-	
-	private int depth(Node node){
-		int depth = 0;
-		while(node.parent != null){
-			node = node.parent;
-			depth++;
-		}
-		return depth++;
 	}	
 
 }
