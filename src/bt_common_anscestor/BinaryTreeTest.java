@@ -42,13 +42,19 @@ public class BinaryTreeTest {
 	public void testInOrder() {
 		Assert.assertEquals(
 				this.bt.inOrder(this.bt.head, new StringBuilder()).toString(), 
-				"3571015172030");		
+				"3-5-7-10-15-17-20-30-");		
 	}
 	@Test
 	public void testPreOrder(){
 		Assert.assertEquals(
+		this.bt.preOrder(this.bt.head, new StringBuilder()).toString(),
+		"20-10-5-3-7-15-17-30-");
+	}
+	@Test
+	public void testPostOrder(){
+		Assert.assertEquals(
 				this.bt.postOrder(this.bt.head, new StringBuilder()).toString(), 
-				"3751715103020");
+				"3-7-5-17-15-10-30-20-");
 	}
 
 }
